@@ -1,6 +1,6 @@
 # OpenYiLa
 
-[![Build](https://github.com/XIANZHE/OpenYiLa/actions/workflows/build.yml/badge.svg)](https://github.com/XIANZHE/OpenYila/actions/workflows/build.yml)
+[![Build](https://github.com/JustaSage/OpenYiLa/actions/workflows/build.yml/badge.svg)](https://github.com/JustaSage/OpenYiLa/actions/workflows/build.yml)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](LICENSE)
 
 Open-source command-line tool & Python library for controlling **YiLa (易拉) BLE door opener** devices.
@@ -31,7 +31,7 @@ openyila --help
 
 ### Prebuilt binary
 
-Download the latest release from [GitHub Releases](https://github.com/XIANZHE/OpenYila/releases) — no Python required.
+Download the latest release from [GitHub Releases](https://github.com/JustaSage/OpenYiLa/releases) — no Python required.
 
 ## CLI Usage
 
