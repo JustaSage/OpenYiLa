@@ -11,6 +11,7 @@ Open-source command-line tool & Python library for controlling **YiLa (易拉) B
 - **Scan** — discover nearby YiLa BLE devices with battery level
 - **Open** — send unlock command with configurable timing & direction
 - **Password** — change device password over BLE
+- **MCP Server** — expose scan/open/passwd tools for MCP clients
 - **i18n** — English / 简体中文 / 繁體中文 (auto-detect or `OPENYILA_LANG`)
 - **Cross-platform** — Linux, macOS, Windows; prebuilt binaries via GitHub Actions
 
@@ -50,7 +51,20 @@ openyila passwd AA:BB:CC:DD:EE:FF --old 123456 --new 654321
 
 # Verbose logging
 openyila -v open AA:BB:CC:DD:EE:FF -p 123456
+
+# Start MCP server (stdio transport)
+openyila mcp
 ```
+
+## MCP Usage
+
+Run `openyila mcp` to start an MCP server over stdio.
+
+Exposed MCP tools:
+
+- `scan_devices(timeout=6.0)` — scan nearby YiLa devices
+- `open_device_lock(address, password, open_time, wait_time, close_time, reverse)` — unlock a device
+- `change_device_password(address, old_password, new_password)` — update device password
 
 ## Library Usage
 

@@ -117,6 +117,13 @@ def passwd(
     asyncio.run(_run())
 
 
+@app.command(help=t("cmd.mcp"))
+def mcp():
+    from openyila.mcp_server import run_mcp_server
+
+    run_mcp_server()
+
+
 def _validate_password(password: str):
     if len(password) != 6 or not password.isdigit():
         typer.echo(t("err.password_format"), err=True)
