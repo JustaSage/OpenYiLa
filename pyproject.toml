@@ -1,0 +1,19 @@
+[project]
+name = "openyila"
+version = "0.1.0"
+description = "Python library for YiLa BLE door opener devices"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "bleak>=0.22.0",
+    "pycryptodome>=3.20.0",
+    "typer>=0.15.0",
+]
+
+[project.scripts]
+openyila = "openyila.cli:main"
+
+[dependency-groups]
+dev = [
+    "pyinstaller>=6.19.0",
+]
