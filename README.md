@@ -5,7 +5,6 @@
 
 Open-source command-line tool & Python library for controlling **YiLa (易拉) BLE door opener** devices.
 
-Reverse-engineered from the Android app `com.macronum.bledemo` (易拉开门助手 v2.4).
 
 ## Features
 
@@ -109,6 +108,15 @@ Payload: "A:PW;P:{MD5(new_password)[8:24]};"
 - `OK` — success
 - `ERROR` — password incorrect
 - Single byte `1`-`5` — battery level (1=low, 5=full)
+
+## Disclaimer
+
+> **Legal Notice**
+>>
+> - This project is **not affiliated with, endorsed by, or associated with** YiLa or Macronum Technology (宏朗科技) in any way.
+> - This software is distributed under the AGPL-3.0 license, **with absolutely no warranty**. Use at your own risk.
+> - Users are responsible for ensuring compliance with local laws and regulations. The authors assume **no liability** for any consequences of using this software.
+> - If the original rights holder has any concerns, please open an issue for communication.
 
 ## License
 

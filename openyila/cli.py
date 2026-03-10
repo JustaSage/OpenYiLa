@@ -34,6 +34,7 @@ def callback(
         bool, typer.Option("--verbose", "-v", help=t("opt.verbose"))
     ] = False,
 ):
+    typer.echo(t("banner"))
     _setup_logging(verbose)
 
 

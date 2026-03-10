@@ -38,6 +38,8 @@ _TRANSLATIONS: dict[str, dict[str, str]] = {
         # passwd
         "passwd.success": "Password changed: {address}",
         "passwd.failed": "Password change failed: {message}",
+        # banner
+        "banner": "This is free software licensed under AGPL-3.0, and comes with ABSOLUTELY NO WARRANTY.\nYou may redistribute it under the terms of the GNU Affero General Public License v3.",
         # errors
         "err.password_format": "Error: Password must be 6 digits",
         # ── client ────────────────────────────────────────────────────────
@@ -92,6 +94,7 @@ _TRANSLATIONS: dict[str, dict[str, str]] = {
         "open.failed": "开锁失败: {message}",
         "passwd.success": "密码修改成功: {address}",
         "passwd.failed": "密码修改失败: {message}",
+        "banner": "本程序是自由软件，以 AGPL-3.0 协议发布，不附带任何担保。\n您可以在 GNU Affero 通用公共许可证第三版的条款下自由传播和修改本程序。",
         "err.password_format": "错误: 密码必须是6位数字",
         "client.recv": "收到设备响应: %s (hex: %s)",
         "client.connecting": "连接设备: %s (%s)",
@@ -141,6 +144,7 @@ _TRANSLATIONS: dict[str, dict[str, str]] = {
         "open.failed": "開鎖失敗: {message}",
         "passwd.success": "密碼修改成功: {address}",
         "passwd.failed": "密碼修改失敗: {message}",
+        "banner": "本程式是自由軟體，以 AGPL-3.0 協議發佈，不附帶任何擔保。\n您可以在 GNU Affero 通用公共授權條款第三版下自由傳播和修改本程式。",
         "err.password_format": "錯誤: 密碼必須是6位數字",
         "client.recv": "收到裝置回應: %s (hex: %s)",
         "client.connecting": "連接裝置: %s (%s)",
