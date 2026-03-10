@@ -3,12 +3,13 @@ name: Build
 on:
   push:
     branches: [main]
+    tags: ["v*"]
   pull_request:
     branches: [main]
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build:
@@ -44,6 +45,10 @@ jobs:
 
       - name: Build executable
         run: |
+          STRIP_FLAG=""
+          if [[ "${{ matrix.target }}" != windows-* ]]; then
+            STRIP_FLAG="--strip"
+          fi
           uv run pyinstaller \
             --name openyila \
             --hidden-import openyila \
@@ -60,7 +65,7 @@ jobs:
             --collect-submodules bleak \
             --collect-submodules Crypto \
             --onefile \
-            --strip \
+            $STRIP_FLAG \
             --noconfirm \
             openyila/cli.py
         shell: bash
@@ -79,3 +84,39 @@ jobs:
         with:
           name: openyila-${{ matrix.target }}
           path: dist/openyila-${{ matrix.target }}*
+
+  release:
+    needs: build
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    name: Release
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+          merge-multiple: true
+
+      - name: Generate changelog
+        run: |
+          prev_tag=$(git describe --tags --abbrev=0 HEAD^ 2>/dev/null || echo "")
+          if [[ -n "$prev_tag" ]]; then
+            echo "## Changes since ${prev_tag}" > changelog.md
+            echo "" >> changelog.md
+            git log --pretty=format:"- %s (%h)" "${prev_tag}..HEAD" >> changelog.md
+          else
+            echo "## Initial Release" > changelog.md
+          fi
+        shell: bash
+
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          body_path: changelog.md
+          generate_release_notes: true
+          files: artifacts/*
