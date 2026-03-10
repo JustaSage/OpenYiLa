@@ -127,7 +127,7 @@ Payload: "A:PW;P:{MD5(new_password)[8:24]};"
 | Parameter | Default | Range | Description |
 |-----------|---------|-------|-------------|
 | password | — | 6 digits | Device access password |
-| open_time | 650ms | 0-10000 | Open signal duration |
-| wait_time | 2000ms | 0-10000 | Pause between open and close |
-| close_time | 650ms | 0-10000 | Close signal duration |
+| open_time | 500ms | 0-10000 | Open signal duration |
+| wait_time | 500ms | 0-10000 | Pause between open and close |
+| close_time | 500ms | 0-10000 | Close signal duration |
 | attribute | 0 | 0 or 1 | 0=normal, 1=reverse |
