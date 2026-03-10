@@ -113,7 +113,7 @@ Payload: "A:PW;P:{MD5(new_password)[8:24]};"
 
 > **Legal Notice**
 >>
-> - This project is **not affiliated with, endorsed by, or associated with** YiLa or Macronum Technology (宏朗科技) in any way.
+> - This project is **not affiliated with, endorsed by, or associated with** YiLa or Shenzhen Xinghe Changlu Technology Corporation Limited.(深圳星河长路技术有限公司) in any way.
 > - This software is distributed under the AGPL-3.0 license, **with absolutely no warranty**. Use at your own risk.
 > - Users are responsible for ensuring compliance with local laws and regulations. The authors assume **no liability** for any consequences of using this software.
 > - If the original rights holder has any concerns, please open an issue for communication.
