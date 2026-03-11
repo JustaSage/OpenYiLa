@@ -64,6 +64,7 @@ jobs:
             --hidden-import Crypto.Cipher.AES \
             --collect-submodules bleak \
             --collect-submodules Crypto \
+            --collect-submodules shellingham \
             --onefile \
             $STRIP_FLAG \
             --noconfirm \

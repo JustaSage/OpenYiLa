@@ -1,6 +1,6 @@
 [project]
 name = "openyila"
-version = "1.1.0"
+version = "1.1.2"
 description = "易拉 BLE 蓝牙门禁开源控制工具与 Python 库，逆向自官方 Android App"
 readme = "README.md"
 requires-python = ">=3.12"
